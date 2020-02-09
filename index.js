@@ -1,26 +1,26 @@
 const express = require('express');
-const passport = require('passport');
-const GoogleStrategy = require('passport-google-oath20').Strategy;
+const mongoose = require('mongoose');
 const keys = require('./config/keys');
+
+require('./models/User');
+require('./services/passport'); // no need to store variable
+
+mongoose.connect(keys.mongoURI);
 
 const app = express();
 
 // https://console.developers.google.com/
 
-passport.use(
-  new GoogleStrategy({
-    clientID: keys.googleClientID,
-    clientSecret: keys.googleClientSecret,
-    callbackURL: '/auth/google/callback'
-  }, (accessToken) => {
-    console.log(accessToken);
-    }
-  )
-);
-
+require('./routes/authRoutes')(app);
+//mongoose.connect(keys.mogoURI);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
 
  // localhost:5000
  // http://localhost:5000/auth/google/callback error fix
+
+//update heroku:
+// git add .
+// git commit -m "<message>"
+// git push heroku master
