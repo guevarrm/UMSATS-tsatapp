@@ -19,5 +19,3 @@ module.exports = (app) => {
   });
 
 };
-
-//SEmHWMfL2aYEf7NS
