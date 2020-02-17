@@ -5,7 +5,7 @@ const passport = require('passport')
 const keys = require('./config/keys');
 
 require('./models/User');
-require('./services/passport'); // no need to store variable
+require('./services/passport');
 
 mongoose.connect(keys.mongoURI);
 
@@ -20,17 +20,18 @@ app.use(
 
 app.use(passport.initialize());
 app.use(passport.session());
-
-// https://console.developers.google.com/
+// sanjay
 
 require('./routes/authRoutes')(app);
-//mongoose.connect(keys.mogoURI);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
 
- // localhost:5000
- // http://localhost:5000/auth/google/callback error fix
+ // localhost:5000 SERVER
+ // http://localhost:5000/auth/google/
+
+ // localhost:3000 CLIENT
+ // http://localhost:3000/auth/google/ -> proxy reroutes to ...:5000
 
 //update heroku:
 // git add .
