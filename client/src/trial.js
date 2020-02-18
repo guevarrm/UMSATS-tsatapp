@@ -13,6 +13,13 @@ readline.question('Enter your latitude: ', yourLat => {
   console.log(`Your longitude is: ${yourLat}`)
   readline.close();
 });*/
+
+var spacetrack = require('spacetrack');
+spacetrack.login({
+  username: 'd.jdeluz@hotmail.com',
+  password: 'thisisforumsats'
+});
+/*
 var spacetrack = require('spacetrack');
 var util = require('util');
 var tle;
@@ -21,7 +28,8 @@ spacetrack.login({
   username: 'd.jdeluz@hotmail.com',
   password: 'thisisforumsats'
 });
-
+*/
+/*
 spacetrack.get({
   type: 'tle_latest',
   query: [
@@ -37,9 +45,9 @@ spacetrack.get({
 .then(function(result) {
   console.log( util.inspect(result, {colors: true, depth: null}) );
   tle = result;
-  processTLE(tle);
   console.log(tle);
 
 }, function(err) {
   console.error('error', err.stack);
 });
+*/
