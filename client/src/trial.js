@@ -14,11 +14,7 @@ readline.question('Enter your latitude: ', yourLat => {
   readline.close();
 });*/
 
-var spacetrack = require('spacetrack');
-spacetrack.login({
-  username: 'd.jdeluz@hotmail.com',
-  password: 'thisisforumsats'
-});
+
 /*
 var spacetrack = require('spacetrack');
 var util = require('util');

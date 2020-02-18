@@ -1,5 +1,5 @@
 const passport = require("passport");
-
+var spacetrack = require('spacetrack');
 module.exports = app => {
   app.get(
     "/auth/google",
@@ -16,6 +16,11 @@ module.exports = app => {
   });
 
   app.get("/api/current_user", (req, res) => {
+
+    spacetrack.login({
+      username: 'd.jdeluz@hotmail.com',
+      password: 'thisisforumsats'
+    });
     console.log(req.user);
     res.send(req.user);
   });
