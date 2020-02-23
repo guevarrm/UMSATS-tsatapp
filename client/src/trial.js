@@ -14,7 +14,6 @@ readline.question('Enter your latitude: ', yourLat => {
   readline.close();
 });*/
 
-
 /*
 var spacetrack = require('spacetrack');
 var util = require('util');

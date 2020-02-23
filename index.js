@@ -6,7 +6,6 @@ const cookieSession = require("cookie-session");
 const passport = require("passport");
 const keys = require("./config/keys");
 
-
 require("./models/User");
 require("./services/passport");
 
@@ -26,6 +25,7 @@ app.use(passport.session());
 // lalalalallaa
 
 require("./routes/authRoutes")(app);
+require("./routes/satRoutes")(app);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
