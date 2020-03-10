@@ -14,9 +14,11 @@ export const fetchUser = () => {
 export const fetchUser = () => async dispatch => {
   const res = await axios.get("/api/current_user");
   dispatch({ type: FETCH_USER, payload: res.data });
+  console.log(res.data);
 };
 
 export const querySat = () => async dispatch => {
   const res = await axios.get("/sat/login");
+  console.log(res.data);
   dispatch({ type: QUERY_SAT, payload: res.data });
 };

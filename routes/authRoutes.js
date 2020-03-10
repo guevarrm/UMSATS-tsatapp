@@ -23,5 +23,9 @@ module.exports = app => {
 
   app.get("/api/current_user", (req, res) => {
     res.send(req.user);
-  });
+  }),
+    function(err) {
+      console.error("error", err.stack);
+      res.send(null);
+    };
 };

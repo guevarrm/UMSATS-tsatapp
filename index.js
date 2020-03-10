@@ -22,7 +22,6 @@ app.use(
 
 app.use(passport.initialize());
 app.use(passport.session());
-// lalalalallaa
 
 require("./routes/authRoutes")(app);
 require("./routes/satRoutes")(app);

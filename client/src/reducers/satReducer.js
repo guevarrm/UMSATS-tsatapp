@@ -1,11 +1,10 @@
-import { FETCH_USER } from "../actions/types";
+import { QUERY_SAT } from "../actions/types";
 
 export default function(state = null, action) {
   console.log(action);
   switch (action.type) {
-    case FETCH_USER: {
+    case QUERY_SAT: {
       console.log(action.payload);
-      console.log("QUERY SAT");
       return action.payload || false;
     }
     default:

@@ -42,10 +42,12 @@ module.exports = app => {
       })
       .then(
         function(result) {
-          res.send(util.inspect(result, { colors: true, depth: null }));
+          res.send(result[0]);
+          //res.redirect("/schedule");
         },
         function(err) {
-          console.error("error", err.stack);
+          //console.error("error", err.stack);
+          res.send(null);
         }
       );
     console.log("Recieved Info");
