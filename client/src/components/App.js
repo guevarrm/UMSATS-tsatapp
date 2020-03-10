@@ -43,7 +43,7 @@ class App extends Component {
         <BrowserRouter>
           <div>
             <Header auth={this.state.auth} test={"hello"} />
-            <Route exact path="/satellite" component={Sat} />
+            <Route exact path="/sat" component={Sat} />
             <Route exact path="/" component={Landing} />
             <Route exact path="/surveys" component={Dashboard} />
             <Route path="/surveys/new" component={SurveyNew} />
