@@ -1,3 +1,5 @@
+// Michael
+
 const express = require("express");
 const mongoose = require("mongoose");
 const cookieSession = require("cookie-session");
@@ -20,9 +22,9 @@ app.use(
 
 app.use(passport.initialize());
 app.use(passport.session());
-// lalalalallaa
 
 require("./routes/authRoutes")(app);
+require("./routes/satRoutes")(app);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
